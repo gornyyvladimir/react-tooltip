@@ -6,18 +6,17 @@ const TooltipProvider = ({ children }) => {
   const [context, setContext] = useState();
 
   const nodeRef = useRef(null);
-  const tooltipRootRef = useRef(null);
 
   useEffect(() => {
-    const tooltipRoot = document.getElementById('tooltip-root');
     const node = document.createElement('div');
+    node.style.position = 'relative';
+    node.style.zIndex = '9999';
 
     nodeRef.current = node;
-    tooltipRootRef.current = tooltipRoot;
 
-    tooltipRootRef.current.appendChild(nodeRef.current);
+    document.body.appendChild(nodeRef.current);
     return () => {
-      tooltipRootRef.current.removeChild(nodeRef.current);
+      document.body.removeChild(nodeRef.current);
     };
   }, []);
 
