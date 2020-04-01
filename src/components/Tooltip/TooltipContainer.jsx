@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import TooltipContext from './TooltipContext';
 import TooltipComponent from './TooltipComponent';
-import { calcX, calcY, calcXRevert } from '../../helpers';
+import { calcX, calcY, calcXRevert } from './helpers';
 
 const TooltipContainer = ({
   isRevert,
